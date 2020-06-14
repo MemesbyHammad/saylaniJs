@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#redL{
+height: 50px;
+width: 50px;
+margin: 1px auto;
+background-color: #7A0000;
+border-radius: 50px;
+border: solid 1px black;
+padding: 1px;
+}
+#yellowL{
+height: 50px;
+width: 50px;
+margin: 1px auto;
+background-color: #7A5C00;
+border-radius: 50px; 
+border: solid 1px black;
+padding: 1px;
+}
+#greenL{
+height: 50px;
+width: 50px;
+margin: 1px auto;
+background-color: #008000;
+border-radius: 50px;
+border: solid 1px black;
+padding: 1px;
+}
+table{         /* Doesn't need dashes */
+height: 180px;
+	</style>
+	
+</head>	
+<body onload="functionary()">   
+<h1> Traffic Light </h1><!-- -->
+<table> <!-- -->
+<tr>
+<td>
+<div id="redL"></div>
+<div id="yellowL"></div>
+<div id="greenL"></div>
+</td>
+</tr>
+</table>
+<script type="text/javascript">
+	var time = 5;
+function functionary() {
+var red = document.getElementById('redL')
+var yellow = document.getElementById('yellowL')
+var green = document.getElementById('greenL')
+var Colours = ["#FF0000","#FFB300","#05FF0D","#7A0000","#7A5C00","#008000"];
+setInterval(function(){
+if(time == 5){
+    red.style.background = Colours[0]; 
+    yellow.style.background = Colours[4];
+    green.style.background = Colours[5];
+    time = 1;
+} 
+else if(time == 2 || time == 4){
+    red.style.background = Colours[3];
+    yellow.style.background = Colours[1];
+    green.style.background = Colours[5];
+}
+else if(time == 3){
+    red.style.background = Colours[3];
+    yellow.style.background = Colours[4];
+    green.style.background = Colours[2];
+}, 
+};
+</script>
+</body>
+</html>
